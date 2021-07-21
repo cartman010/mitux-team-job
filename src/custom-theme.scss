@@ -1,0 +1,50 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$primary-palette: (50: #E3F2FD, 100: #BBDEFB, 200: #90CAF9, 300: #64B5F6, 400: #42A5F5, 500: #64B5F6, 600: #64B5F6, 700: #64B5F6, 800: #64B5F6, 900: #64B5F6,
+// ... continues to 900
+contrast: (50: rgba(black, 0.87), 100: rgba(black, 0.87), 200: rgba(black, 0.87), 300: white, 400: white, 500: white, 600: white, 700: white, 800: white, 900: white
+// ... continues to 900
+) );
+
+$accent-palette: (50: #E0F2F1, 100: #B2DFDB, 200: #80CBC4, 300: #4DB6AC, 400: #26A69A, 500: #009688, 600: #00897B, 700: #00796B, 800: #00695C, 900: #004D40,
+// ... continues to 900
+contrast: (50: rgba(black, 0.87), 100: rgba(black, 0.87), 200: rgba(black, 0.87), 300: white, 400: white, 500: white, 600: white, 700: white, 800: white, 900: white
+// ... continues to 900
+) );
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$mitux-primary: mat-palette($primary-palette);
+$mitux-accent: mat-palette($accent-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$mitux-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$mitux-theme: mat-light-theme((
+  color: (
+    primary: $mitux-primary,
+    accent: $mitux-accent,
+    warn: $mitux-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($mitux-theme);
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

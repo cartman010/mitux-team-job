@@ -1,2 +1,81 @@
-<p>info-perso works!</p>
-hhhhhhhhhhhhh
+<div class="d-flex d-flex-row">
+  <div class="img-size">
+    <img src="../assets/img/infos-gen.png" class="shadow-circle-img" />
+  </div>
+  <div class="form-size">
+    <div class="title-font d-flex d-flex-column">
+      Informations générales
+    </div>
+    <div class="d-flex d-flex-column">
+      <mat-form-field class="w-75" appearance="outline">
+        <mat-label>Pseudo</mat-label>
+        <input matInput name="pseudo">
+      </mat-form-field>
+    </div>
+    <div class="d-flex d-flex-column">
+      <mat-form-field class="w-75" appearance="outline">
+        <mat-label>Nom</mat-label>
+        <input matInput name="nom">
+      </mat-form-field>
+    </div>
+    <div class="d-flex d-flex-column">
+      <mat-form-field class="w-75" appearance="outline">
+        <mat-label>Prénom</mat-label>
+        <input matInput name="prenom">
+      </mat-form-field>
+    </div>
+    <fieldset class="date-border d-flex d-flex-column">
+      <legend class="px-2 ml-2 legend-class">date de naissance:</legend>
+      <mat-form-field appearance="standard" class="pl-2">
+        <mat-label>Jour</mat-label>
+        <mat-select id="select-day" [formControl]="dayControl">
+          <mat-option *ngFor="let day of days" value="{{ day }}">
+            {{ day }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="standard">
+        <mat-label>Mois</mat-label>
+        <mat-select id="select-month" [formControl]="monthControl" (selectionChange)="setDays()">
+          <mat-option value="0">January</mat-option>
+          <mat-option value="1">February</mat-option>
+          <mat-option value="2">March</mat-option>
+          <mat-option value="3">April</mat-option>
+          <mat-option value="4">May</mat-option>
+          <mat-option value="5">June</mat-option>
+          <mat-option value="6">July</mat-option>
+          <mat-option value="7">August</mat-option>
+          <mat-option value="8">September</mat-option>
+          <mat-option value="9">October</mat-option>
+          <mat-option value="10">November</mat-option>
+          <mat-option value="11">December</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="standard" class="pr-2">
+        <mat-label>Année</mat-label>
+        <mat-select id="select-year" [formControl]="yearControl" (selectionChange)="setDays()">
+          <mat-option *ngFor="let year of years" value="{{ year }}">
+            {{ year }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </fieldset>
+    <div class="mt-4">
+      <mat-radio-group color="primary">
+        <mat-radio-button class="mr-4" labelPosition="before" value="1">Homme</mat-radio-button>
+        <mat-radio-button labelPosition="before" value="2">Femme</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="d-flex d-flex-column">
+      <mat-form-field class="w-75" appearance="outline">
+        <mat-label>Ville de résidence</mat-label>
+        <input matInput name="ville">
+      </mat-form-field>
+    </div>
+    <div class="d-flex d-flex-column justify-content-center w-75">
+      <button mat-raised-button color="primary">Valider</button>
+    </div>
+  </div>
+</div>

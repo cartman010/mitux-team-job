@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.sass",
               "src/assets/css/bootstrap.min.css",
               "src/assets/css/font-awesome.min.css",

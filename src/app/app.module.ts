@@ -16,6 +16,13 @@ import { InfoPersoComponent } from './info-perso/info-perso.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { EtudesComponent } from './etudes/etudes.component';
 import { ProfessionnelComponent } from './professionnel/professionnel.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -56,11 +63,14 @@ import { ProfessionnelComponent } from './professionnel/professionnel.component'
         ]
       },
 
-      { path: 'info-perso', component: InfoPersoComponent, outlet: 'infos' },
-      { path: 'etudes', component: EtudesComponent, outlet: 'infos' },
-      { path: 'professionnel', component: ProfessionnelComponent }
       //, canActivate: [AuthGuard]  }
     ]),
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatRadioModule,
+    MatButtonModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
