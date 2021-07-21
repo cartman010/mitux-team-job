@@ -22,6 +22,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { EtudeItemComponent } from './etude-item/etude-item.component';
 
 
 @NgModule({
@@ -35,7 +38,8 @@ import { MatButtonModule } from '@angular/material/button';
     InfoPersoComponent,
     NavigationComponent,
     EtudesComponent,
-    ProfessionnelComponent
+    ProfessionnelComponent,
+    EtudeItemComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -70,7 +74,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatSelectModule,
     MatFormFieldModule,
     MatRadioModule,
-    MatButtonModule
+    MatButtonModule,
+    MatExpansionModule,
+    MatIconModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },

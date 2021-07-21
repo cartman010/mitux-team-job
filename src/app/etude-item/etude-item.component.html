@@ -1,0 +1,29 @@
+<mat-expansion-panel class="w-75" *ngIf="display">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{ title }}
+    </mat-panel-title>
+    <mat-panel-description class="d-flex justify-content-end">
+      <mat-icon (click)="onClickRemove()">remove_circle_outline</mat-icon>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <div class="d-flex d-flex-column">
+    <mat-form-field class="w-75" appearance="standard">
+      <mat-label>Nom de l'établissement</mat-label>
+      <input matInput name="etablissement">
+    </mat-form-field>
+  </div>
+
+  <div class="d-flex d-flex-column">
+    <mat-form-field class="w-75" appearance="standard">
+      <mat-label>Niveau d'études</mat-label>
+      <mat-select [formControl]="niveauControl" (selectionChange)="setTitle()">
+        <mat-option *ngFor="let niveau of niveaux" value="{{ niveau }}">
+          {{ niveau }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+</mat-expansion-panel>

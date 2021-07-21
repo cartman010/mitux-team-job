@@ -1,1 +1,16 @@
-<p>etudes works!</p>
+<div class="d-flex d-flex-row">
+  <div class="img-size">
+    <img src="../assets/img/etudes.png" class="shadow-circle-img" />
+  </div>
+  <div class="form-size">
+    <div class="title-font d-flex d-flex-column">
+      Etudes
+    </div>
+    <mat-accordion class="example-headers-align">
+      <app-etude-item [title]="'Secondaire/Bac'"></app-etude-item>
+      <app-etude-item [title]="'Licence (B+3)'"></app-etude-item>
+      <app-etude-item [title]="'Master (B+5)'"></app-etude-item>
+      <app-etude-item [title]="'Doctorat (B+8/11)'"></app-etude-item>
+    </mat-accordion>
+  </div>
+</div>
