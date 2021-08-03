@@ -26,4 +26,26 @@
     </mat-form-field>
   </div>
 
+  <div class="d-flex d-flex-column justify-content-between w-75">
+    <mat-form-field class="date-width" appearance="standard">
+      <mat-label>De (année)</mat-label>
+      <mat-select [formControl]="anneeDebutControl" (selectionChange)="setTitle()" required>
+
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let year of years" value="{{ year }}">
+          {{ year }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="anneeDebutControl.hasError('required')">La date de fin doit être supérieure à la date de début</mat-error>
+    </mat-form-field>
+    <mat-form-field class="date-width" appearance="standard">
+      <mat-label>A (année)</mat-label>
+      <mat-select [formControl]="anneeFinControl" (selectionChange)="setTitle()">
+        <mat-option *ngFor="let year of years" value="{{ year }}">
+          {{ year }}
+        </mat-option>
+      </mat-select>
+      <mat-error>La date de fin doit être supérieure à la date de début</mat-error>
+    </mat-form-field>
+  </div>
 </mat-expansion-panel>
